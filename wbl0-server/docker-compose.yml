@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+  nats-streaming:
+    ports:
+        - 4444:4222
+        - 8223:8223
+    image: nats-streaming
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: example
+    ports:
+        - 5432:5432
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
